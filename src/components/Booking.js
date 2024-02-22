@@ -1,6 +1,6 @@
 // Booking.js
 import React from "react";
-import BookingForm from "./BookingForm";
+import BookingForm from "./BookingForm/BookingForm";
 
 const Booking = ({ availableTimes, submitForm }) => {
   return (

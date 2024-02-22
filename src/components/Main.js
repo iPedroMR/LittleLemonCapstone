@@ -5,7 +5,6 @@ import ConfirmedBooking from "./ConfirmedBooking";
 import Header from "./Header";
 
 const Main = () => {
-  // Function to fetch available booking times from API
   const fetchAPI = (date, dispatch) => {
     const result = [];
     for (let i = 17; i <= 23; i++) {
@@ -17,15 +16,15 @@ const Main = () => {
       }
     }
 
+    !result.includes("17:00") && result.push("17:00");
+
     dispatch({ type: "UPDATE_TIMES", availableTimes: result });
   };
 
-  // Function to submit booking form data to API
   const submitAPI = (formData) => {
-    return true; // Mock implementation, always returns true
+    return true;
   };
 
-  // Reducer function to update available booking times
   const reducer = (state, action) => {
     switch (action.type) {
       case "UPDATE_TIMES":
@@ -35,13 +34,9 @@ const Main = () => {
     }
   };
 
-  // Initial state for available booking times
   const initialState = { availableTimes: [] };
-
-  // useReducer hook to manage state of available booking times
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Function to handle form submission
   const navigate = useNavigate();
   const submitForm = (formData) => {
     if (submitAPI(formData)) {
@@ -49,13 +44,12 @@ const Main = () => {
     }
   };
 
-  // Fetch available booking times when component mounts
   useEffect(() => {
     fetchAPI(new Date(), dispatch);
   }, []);
 
   return (
-    <main>
+    <main role="main">
       <Routes>
         <Route path="/" element={<Header />} />
         <Route

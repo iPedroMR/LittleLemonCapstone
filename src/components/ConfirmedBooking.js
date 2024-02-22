@@ -2,7 +2,7 @@ import React from "react";
 
 const ConfirmedBooking = () => {
   return (
-    <header>
+    <header aria-labelledby="confirmation-message">
       <section>
         <div className="confirmation-message">
           <h1>Booking Confirmed!</h1>

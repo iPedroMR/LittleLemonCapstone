@@ -3,7 +3,7 @@ import brandImage from "../images/brand.png";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer role="contentinfo">
       <section className="footer-content">
         <div className="brand-container">
           <img src={brandImage} alt="Little Lemon Brand" />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
+    <header role="banner">
       <section className="header-content">
         <div className="header-text">
           <h2>Little Lemon</h2>
@@ -21,11 +21,11 @@ const Header = () => {
             of resilience, heritage, and the beauty of blending cultures.
           </p>
           <Link to="/Booking">
-            <button>Reserve Table</button>
+            <button aria-label="Reserve Table">Reserve Table</button>
           </Link>
         </div>
         <div className="header-image">
-          <img src={foodImage} alt="Food" />
+          <img src={foodImage} alt="Delicious Italian Food" />
         </div>
       </section>
     </header>
